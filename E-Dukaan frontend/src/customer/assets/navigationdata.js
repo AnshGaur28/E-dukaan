@@ -1,3 +1,4 @@
+import {API_BASE_URL}  from '../../config/apiConfig';
 export const navigation= {
     categories: [
       {
@@ -82,7 +83,7 @@ export const navigation= {
             id: 'clothing',
             name: 'Clothing',
             items: [
-              { name: 'Mens Kurtas', id: 'mens_kurta' , href : "/men/clothing/mens_kurta" },
+              { name: 'Mens Kurtas', id: 'mens_kurta' , href : `${API_BASE_URL}/men/clothing/mens_kurta` },
               { name: 'Shirt', id: 'shirt' },
               { name: 'Men Jeans', id: 'men_jeans' },
               { name: 'Sweaters', id: '#' },
