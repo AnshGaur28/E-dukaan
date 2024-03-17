@@ -22,7 +22,7 @@ export const findProductById=  (productId) => async(dispatch)=>{
     dispatch({type:  FIND_PRODUCT_BY_ID_REQUEST}) ;
     // console.log(productId);
     try{
-        const {data} = await api.get(`/api/product/id/${productId}`);
+        const {data} = await api.get(`${API_BASE_URL}/api/product/id/${productId}`);
         // console.log(data);
         dispatch({type:FIND_PRODUCT_BY_ID_SUCCESS , payload : data});
     }

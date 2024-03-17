@@ -18,7 +18,7 @@ const  createPaymentLink = async (orderId)=>{
                 email : true ,
             },
             reminder_enable : true ,
-            callback_url : `http://localhost:5173/payment/${orderId}`,
+            callback_url : `http:///payment/${orderId}`,
             callback_method : "get" ,
         }
         const paymentLink  = await Razorpay.paymentLink.create(paymentLinkRequest);

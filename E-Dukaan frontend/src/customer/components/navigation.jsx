@@ -323,7 +323,6 @@ export default function Navigation() {
                       )}
                     </Popover>
                   ))}
-
                   {navigation.pages.map((page) => (
                     <a
                       key={page.name}

@@ -5,7 +5,7 @@ function App() {
 
   return (
       <Routes>
-        <Route path='/*' element={<CustomerRoutes/>}></Route>
+        <Route path='https://e-dukaaan.netlify.app/*' element={<CustomerRoutes/>}></Route>
       </Routes>
       
   )
