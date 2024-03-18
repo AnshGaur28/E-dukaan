@@ -13,7 +13,7 @@ export function Login() {
             email : formData.get("email"),
             password : formData.get("password"),
         }
-        console.log(userData);
+        // console.log(userData);
         dispatch(login(userData));
     }
     return (

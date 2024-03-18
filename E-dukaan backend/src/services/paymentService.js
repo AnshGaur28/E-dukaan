@@ -3,7 +3,7 @@ const {findOrderById , findOrderUsingId} = require('../controllers/order.control
 
 const  createPaymentLink = async (orderId)=>{
     const order = await findOrderUsingId(orderId);
-    console.log(order);
+    // console.log(order);
     try {
         const paymentLinkRequest = {
             amount  : order.totalPrice*100 ,
@@ -18,7 +18,7 @@ const  createPaymentLink = async (orderId)=>{
                 email : true ,
             },
             reminder_enable : true ,
-            callback_url : `http:///payment/${orderId}`,
+            callback_url : `https://e-dukaaan.netlify.app`,
             callback_method : "get" ,
         }
         const paymentLink  = await Razorpay.paymentLink.create(paymentLinkRequest);
@@ -31,7 +31,8 @@ const  createPaymentLink = async (orderId)=>{
         return resData ;
     }
     catch(error){
-        throw new Error(error);
+        console.log(error)
+        throw new Error(error.message);
     }
 }
 

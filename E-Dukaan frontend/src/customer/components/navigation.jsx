@@ -178,6 +178,7 @@ export default function Navigation() {
                         {page.name}
                       </Link>
                     </div>
+                    
                   ))}
                 </div> */}
 
