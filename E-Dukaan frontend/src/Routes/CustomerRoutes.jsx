@@ -17,13 +17,13 @@ export default function CustomerRoutes(){
         </div>
         <Routes>
             <Route path='/' element={<div className='-z-10'><HomePage/></div>}/>
+            <Route path='/:levelOne/:levelTwo/:levelThree' element={<div className='-z-10'><Product/></div>}/>
             <Route path='/register' element={<div className='-z-10'><HomePage/></div>}/>
             <Route path='/login' element={<div className='-z-10'><HomePage/></div>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/order' element={<Order/>}/>
             <Route path='/order/:OrderID' element={<OrderDetails/>}/>
             <Route path='/checkout' element={<Checkout/>}/>
-            <Route path='/:levelOne/:levelTwo/:levelThree' element={<div className='-z-10'><Product/></div>}/>
             <Route path='/product/:productID' element={<div className='-z-10'><ProductDetails/></div>}/>
             <Route path='/payment/:orderId' element={<PaymentSucess/>}/>
         </Routes>

@@ -2,7 +2,6 @@ import { Button, Grid, TextField } from "@mui/material"
 import { useNavigate } from "react-router-dom";
 import { login } from "../../State/auth/Action";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
 
 export function Login() {
     const navigate = useNavigate();
