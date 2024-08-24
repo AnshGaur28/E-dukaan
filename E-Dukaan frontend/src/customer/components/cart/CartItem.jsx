@@ -14,7 +14,7 @@ export default function CartItem({cartItemId , item }) {
     const order_id = searchParams.get('order_id');
     const dispatch = useDispatch();
     const handleRemove = (event)=>{
-        // console.log(cartId);
+        console.log("abc");
         dispatch(removeCartItem(cartItemId));
         window.location.reload();
     }

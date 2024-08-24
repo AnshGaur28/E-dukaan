@@ -230,8 +230,8 @@ export default function Navigation() {
                 <a href="/">
                   <span className="sr-only">Your Company</span>
                   <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    className="h-[60px] w-auto"
+                    src="/logo-color.svg"
                     alt=""
                   />
                 </a>
@@ -371,15 +371,15 @@ export default function Navigation() {
                 
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
+                {jwt && <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
                   </a>
-                </div>
+                </div>}
 
                 {/* Cart */}
-                <div className="ml-4 flow-root lg:ml-6">
+                {jwt && <div className="ml-4 flow-root lg:ml-6">
                   <Link to="/cart" className="group -m-2 flex items-center p-2">
                     <ShoppingBagIcon
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
@@ -388,7 +388,7 @@ export default function Navigation() {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{countCartItems}</span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
-                </div>
+                </div>}
               </div>
             </div>
           </div>

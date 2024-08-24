@@ -1,4 +1,6 @@
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, REGISTER_FAILURE, REGISTER_REQUEST, REGISTER_SUCCESS } from "./ActionType"
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const initialState = {
     user : null ,
@@ -14,6 +16,7 @@ export const authReducer = (state=initialState , action)=>{
             return {...state , loading:true , error:null };
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS :
+            toast.success("Login successful!");
             return {...state , loading : false , error:null , jwt : action.payload};
         case GET_USER_SUCCESS :
             return {...state , loading:false , error:null , user:action.payload};

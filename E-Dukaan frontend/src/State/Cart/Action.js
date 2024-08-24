@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { api } from "../../config/apiConfig";
 import { ADD_ITEM_TO_CART_FAILURE, ADD_ITEM_TO_CART_REQUEST, ADD_ITEM_TO_CART_SUCCESS, GET_CART_FAILURE, GET_CART_REQUEST, GET_CART_SUCCESS, REMOVE_CART_ITEM_FAILURE, REMOVE_CART_ITEM_REQUEST, REMOVE_CART_ITEM_SUCCESS, UPDATE_CART_ITEM_FAILURE, UPDATE_CART_ITEM_REQUEST, UPDATE_CART_ITEM_SUCCESS } from "./ActionType"
 
@@ -24,11 +26,13 @@ export const addItemToCart = (reqData) => async (dispatch) => {
         const data  = await api.put('/api/cart/add', reqData);
         dispatch({ type: ADD_ITEM_TO_CART_SUCCESS, payload: data });
         // console.log("added to cart" , data);
+        toast.success("Added Item to cart");
     }
 
     catch (error) {
         // console.log("error")
         dispatch({ type: ADD_ITEM_TO_CART_FAILURE, payload: error.message });
+        toast.error("Some error occurred");
 
     }
 }
@@ -39,10 +43,13 @@ export const removeCartItem = (reqData) => async (dispatch) => {
     try {
         const { data } = await api.delete(`/api/cartItem/${reqData}`);
         dispatch({ type: REMOVE_CART_ITEM_SUCCESS, payload: data });
+        toast.success("removed Item from cart");
     }
 
     catch (error) {
         dispatch({ type: REMOVE_CART_ITEM_FAILURE, payload: error.message });
+        toast.error("Some error occurred");
+
 
     }
 }
@@ -51,10 +58,11 @@ export const updateCartItem = (reqData) => async (dispatch) => {
     try {
         const { data } = await api.put(`/api/cartItem/${reqData.cartItemId}`, reqData.data);
         dispatch({ type: UPDATE_CART_ITEM_SUCCESS, payload: data });
+        toast.success("Cart updated");
     }
 
     catch (error) {
         dispatch({ type: UPDATE_CART_ITEM_FAILURE, payload: error.message });
-
+        toast.error("Some error occurred");
     }
 }
