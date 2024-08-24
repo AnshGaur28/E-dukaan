@@ -2,9 +2,7 @@
 
 E-dukaan is a uni-vendor product selling web application designed to provide a seamless platform for vendors to sell their products online. With E-dukaan, vendors can easily manage their inventory, showcase their products, and process orders, while customers can browse through a wide range of products and make purchases conveniently.
 
-## Features
-
-IN PROGRESS - **Vendor Dashboard**: Vendors have access to a dedicated dashboard where they can manage their products, view orders, and track sales. 
+## Features (For testing or review purposes only Men's Kurtas are available)
   
 - **Product Management**: Vendors can add, edit, and remove products, including details such as name, description, price, and images.
 
