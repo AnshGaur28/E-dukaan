@@ -1,6 +1,8 @@
 const { connectDb } = require('./config/mongoconnect');
 const app = require('./index') ;
 const PORT = process.env.PORT ;
+
+app.get('/login' , )
 app.listen(PORT ,async ()=>{
     await connectDb();
     console.log("Connected to Database")
